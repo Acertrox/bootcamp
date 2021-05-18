@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 1px solid red;
+}
+body{
+    padding: 5px 10px;
+    
+}
+h1{
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(145, 145, 145);
+}
+p{
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(194, 194, 194);
+}
+.sm, .med, .lg{
+    background-color: yellow;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.bold{
+    font-weight: bold;
+}
+@media only screen and (max-width: 480px) {
+    .med{
+        display: none;
+    }
+    .lg{
+        display: none;
+    }
+}
+@media only screen and (min-width: 481px) {
+    .sm{
+        display: none;
+    }
+    .lg{
+        display: none;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .sm{
+        display: none;
+    }
+    .med{
+        display: none;
+    }
+    .lg{
+        display: inherit;
+    }
+}

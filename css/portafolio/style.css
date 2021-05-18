@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.contenedor{
+    margin: 0;
+    padding: 0;
+}
+
+.top{
+    height: 80px;
+    width: 950px;
+    background-color: rgb(224, 224, 224);
+}
+.top h1{
+    display: inline-block;
+    padding: 20px;
+    width: 450px;
+}
+.top h2{
+    display: inline-block;
+}
+.top h4{
+    padding: 10px;
+    margin: 0 auto;
+    width: fit-content;
+}
+.top a{
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+}
+.links{
+    display: block;
+    text-align: center;
+}
+.top img{
+    width: 16px;
+}
+.bottom{
+    min-height: 500px;
+    width: 950px;
+    background: radial-gradient(rgb(99, 79, 107),rgb(46, 34, 46),black);
+}
+.bottom img{
+    width: 350px;
+    border: 3px solid silver;
+    margin: 20px 0px 20px 20px;
+}
+.descripcion{
+    display: inline-block;
+    width: 520px;
+    vertical-align: top;
+    margin: 20px;
+    background-color: rgb(221, 221, 221);
+    height: 236px;
+}
+.descripcion a{
+    display: block;
+    padding: 10px;
+    color: black;
+}
+.title{
+    background:linear-gradient(darkgrey,grey,darkgrey);
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+.messtext{
+    padding: 10px 10px 0 10px;
+}
+.post{
+    width: 284px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 20px 0 20px 20px;
+    background-color: rgb(221, 221, 221);
+    min-height: 236px;
+}
+.post img{
+    margin: 0;
+    width: 283px;
+    border: 0;
+}
+.post .messtext{
+    padding: 5px 10px;
+}
+
+.icons img{
+    display: inline-block;
+    margin: 10px 0 10px 10px;
+    width: 35px;
+}
+.post a{
+    display: block;
+    background-color: rgb(56, 88, 67);
+    border-radius:10px;
+    width: fit-content;
+    border: 1px solid black;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    margin: 0 auto 10px auto;
+
+}

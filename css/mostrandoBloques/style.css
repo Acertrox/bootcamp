@@ -1,0 +1,43 @@
+*{
+    outline: 1ox solid red;
+}
+h1{
+    font-size: 50px;
+}
+.content{
+    background-color: rgb(209, 209, 209);
+    width: 1000px;
+}
+.top{
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+.top img{
+    width: 100px;
+    background-color: white;
+}
+.bottom{
+    padding: 13px;
+}
+.cartaAzul{
+    border: 4px solid black;
+    margin: 1px;
+    padding: 12px;
+    background-color: skyblue;
+    display: inline-block;
+}
+.cartaAzul img{
+    width: 156px;
+    height: 156px;
+}
+.cartaRoja{
+    border: 4px solid black;
+    margin: 3px;
+    padding: 12px;
+    background-color: rgb(255, 104, 104);
+    display: inline-block;
+}
+.cartaRoja img{
+    width: 156px;
+    height: 156px;
+}
