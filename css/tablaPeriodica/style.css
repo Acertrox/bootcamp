@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    padding: 10px;
+    width: 1024px;
+    background-color: rgb(235, 235, 235);
+}
+.sGroup{
+    width: 155px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+.number{
+    line-height: 47px;
+}
+.dGroup{
+    margin-left: 20px;
+    width: 526px;
+    display: inline-block;
+    vertical-align: top;
+}
+.pGroup{
+    width: 314px;
+    margin-left: 1px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.block{
+    box-sizing: border-box;
+    display: inline-block;
+    width: 47px;
+    height: 47px;
+    text-align: center;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    vertical-align: top;
+    color: red;
+}
+.emptyBlock{
+    display: block;
+    width: 47px;
+    height: 147px;
+}
+.element{
+    font-size: 12px;
+    color: black;
+}
+.element div{
+    font-size: 20px;
+    line-height: 18px;
+    font-weight: bold;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    color: blue;
+}
+.sGroup .element{
+    background-color: rgb(104, 165, 255);
+    border:1px solid gray;
+}
+.dGroup .element{
+    background-color: rgb(255, 167, 182);
+    border:1px solid gray;
+}
+.pGroup .element{
+    background-color: rgb(223, 186, 22);
+    border:1px  solid gray;
+}
+.fGroup .element{
+    background-color: rgb(39, 223, 22);
+    border:1px solid gray;
+}
+.fTittle{
+    width: 173px;
+    text-align: end;
+    line-height: 47px;
+}
+.fTittle span{
+    margin-left: 40px;
+}
+#he{
+    width: 47px;
+    height: 47px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    vertical-align: top;
+    font-size: 12px;
+    color: black;
+    background-color: rgb(223, 186, 22);
+    border:1px solid gray;
+}
+#he div{
+    font-size: 20px;
+    line-height: 18px;
+    font-weight: bold;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    color: blue;
+}

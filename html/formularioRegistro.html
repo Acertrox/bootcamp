@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mi Formulario de Registro</h1>
+    <table>
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="nombre">Nombre: </label>
+                </td>
+                <td>
+                    <input type="text" id="nombre">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="apellido">Apellido: </label>
+                </td>
+                <td>
+                    <input type="text" id="apellido">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email: </label>
+                </td>
+                <td>
+                    <input type="text" id="email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="contraseña">Contraseña: </label>
+                </td>
+                <td>
+                    <input type="password" id="contraseña">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="cumpleaños">Cumpleaños: </label>
+                </td>
+                <td>
+                    <input type="date" id="cumpleaños">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        <input type="radio" id="masculino">
+        <label for="masculino">Hombre</label>
+        <input type="radio" id="femenino">
+        <label for="femenino">Mujer</label>
+        <input type="radio" id="otro">
+        <label for="otro">Otro</label>
+    </p>
+    <p>
+        <label for="descripcion">Una breve descripción sobre ti: </label>
+    </p>
+    <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+    <p>
+        <label for="lenguaje">Lenguaje favorito: </label>
+        <select name="lenguaje" id="lenguaje">
+            <option value="none">Seleccione una opcion...</option>
+            <option value="javascript">javascript</option>
+            <option value="python">python</option>
+            <option value="java">java</option>
+            <option value="c">C++</option>
+            <option value="scheme">scheme</option>
+            <option value="prolog">prolog</option>
+            <option value="gml">gml</option>
+            <option value="lolcode">lolcode</option>
+        </select>
+    </p>
+    <input type="submit" title="Enviar">
+</body>
+</html>
