@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.row{
+    display: inline-block;
+}
+.row *{
+    display: inline-block;
+    vertical-align: top;
+}
+#container{
+    background-color: black;
+    width: 200px;
+}
+
+.brick{
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    background-color: blue;
+}
+.coin{
+    width: 5px;
+    height: 5px;
+    margin: 7.5px;
+    background-color: yellow;
+    border-radius: 50%;
+}
+#pacman{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    background: url("images/pacman.gif");
+    background-size: cover;
+}
+.empty{
+    width: 20px;
+    height: 20px;
+}
