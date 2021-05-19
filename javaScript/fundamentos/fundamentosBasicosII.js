@@ -33,7 +33,6 @@ function printReturnOdd(arr) {
         if (arr[i]%2==1) {
             return arr[i]
         }
-        
     }
     return false;
 }
