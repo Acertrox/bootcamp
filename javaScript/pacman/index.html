@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pacman Demo</title>
+    <title>Pacman</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -42,7 +42,15 @@
             }
             document.getElementById("container").innerHTML = output;
         }
-        drawWorld();
+
+        function movePacman() {
+            
+        }
+        function executeWorld() {
+            movePacman();
+            drawWorld();
+        }
+        var gameOn = setInterval(executeWorld(), 1000/30)
 
     </script>
 </body>
