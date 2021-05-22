@@ -3,40 +3,105 @@
     padding: 0;
 }
 .row{
-    display: inline-block;
+    display: block;
+    height: 16px;
 }
 .row *{
     display: inline-block;
-    vertical-align: top;
 }
 #container{
     background-color: black;
-    width: 200px;
+    width: fit-content;
 }
 
 .brick{
-    width: 20px;
-    height: 20px;
-    margin: 0;
+    width: 16px;
+    height: 16px;
     background-color: blue;
 }
 .coin{
     width: 5px;
     height: 5px;
-    margin: 7.5px;
+    margin: 5.5px;
     background-color: yellow;
     border-radius: 50%;
 }
 #pacman{
     position: absolute;
-    left: 20px;
-    top: 20px;
-    width: 20px;
-    height: 20px;
-    background: url("images/pacman.gif");
-    background-size: cover;
+    width: 16px;
+    height: 16px;
+    background: url("images/pacman.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#pacman2{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: url("images/pacman2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    color: red;
 }
 .empty{
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
+}
+#score{
+    position: absolute;
+    top: 0;
+    left: 16px;
+    font-size: 16px;
+    color: yellow;
+    font-weight: bold;
+}
+#score2{
+    position: absolute;
+    top: 448px;
+    left: 16px;
+    font-size: 16px;
+    color: red;
+    font-weight: bold;
+}
+.cherry{
+    width: 16px;
+    height: 16px;
+    background: url("images/cherry.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#blinky{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: url("images/blinkyup0.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#pinky{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: url("images/pinkyup0.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#inky{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: url("images/inkyup0.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#clyde{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: url("images/clydeup0.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.separar{
+    margin-left: 150px;
 }
