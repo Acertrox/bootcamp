@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 1px solid red;
+}
+#container{
+    width: 480px;
+    height: 640px;
+    background: url("images/WaterTileOcean.gif");
+}
+#player{
+    position: absolute;
+    background: url("images/general.png");
+    background-position: -6px -6px;
+    width: 24px;
+    height: 16px;
+}
+.enemy1{
+    position: absolute;
+    background: url("images/general.png");
+    background-position: -5px -200px;
+    width: 16px;
+    height: 16px;
+}
+.enemy2{
+    position: absolute;
+    background: url("images/general.png");
+    background-position: -5px -178px;
+    width: 16px;
+    height: 16px;
+}
+.pBullet{
+    position: absolute;
+    background: url("images/general.png");
+    background-position: -92px -80px;
+    width: 2px;
+    height: 10px;
+}
+#score{
+    position: absolute;
+    left: 481px;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+.explosion{
+    position: absolute;
+    background: url("images/general.png");
+    background-position: -217px -78px;
+    width: 17px;
+    height: 17px;
+}

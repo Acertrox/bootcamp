@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="player"></div>
+        <div id="score"></div>
+        <div id="enemies"></div>
+        <div id="pBullets"></div>
+        <div id="eBullets"></div>
+        <div id="explosions"></div>
+    </div>
+</body>
+<script>
+var impactSFX = new Audio("SFX/impact.wav")
+var explosionSFX = new Audio("SFX/explosion.wav")
+var shootSFX = new Audio("SFX/shoot.wav")
+shootSFX.volume = 0.2
+impactSFX.volume = 0.2
+explosionSFX.volume = 0.2
+var player = {
+     x: 240,
+     y: 320,
+     direction: 90,
+     speed: 0,
+     shoot: 0,
+     width: 24,
+     reload: 5,
+     bullets: 0,
+     invencibility: 180,
+     score: 0,
+     xMov: 0,
+     yMov: 0
+}
+var explosions = []
+var enemies = []
+var pBullets = []
+var create = 30
+var controls ={
+    left: false,
+    right: false,
+    up: false,
+    down: false,
+    space: false,
+}
+function createEnemies() {
+    if (create < 1) {
+        var enemy = Math.floor(Math.random()*2)
+        if (enemy == 0) {
+            var xpos = Math.floor(Math.random() * ((480 - 48) - 24)) + 24;
+            var ypos = -12
+            enemies.push({type:"enemy1", x:xpos, y:ypos, direction: 270, speed: 2, width:16, height:16, health: 5})
+        }
+        if (enemy == 1) {
+            var xpos = 492
+            var ypos = Math.floor(Math.random() * (640 - 48)) + 24;
+            enemies.push({type:"enemy2", x:xpos, y:ypos, direction: 180, speed: 2, width:16, height:16, health: 3})
+        }
+        create = 30
+    }
+    else{
+        create-=1
+    }
+}
+function moveEnemies() {
+    for (let i = 0; i < enemies.length; i++) {
+        if (enemies[i].type == "enemy1") {
+            enemies[i].y += enemies[i].speed
+            if (enemies[i].y > 640) {
+                enemies.splice(i,1)
+                i--
+                continue
+            }
+        }
+        if (enemies[i].type == "enemy2") {
+            enemies[i].x -= enemies[i].speed
+            if (enemies[i].x < -12) {
+                enemies.splice(i,1)
+                i--
+            }
+        }
+    }
+}
+function displayPlayer(){
+    document.getElementById("player").style.left = player.x +"px"
+    document.getElementById("player").style.top = player.y +"px"
+    document.getElementById("score").innerHTML = "Score: "+player.score+""
+    if (player.invencibility%20<10) {
+        document.getElementById("player").style.background = "url('images/general.png')"
+        document.getElementById("player").style.backgroundPosition = "-6px -6px"
+    }
+    else{
+        document.getElementById("player").style.background = "none"
+    }
+}
+function displayEnemies(){
+    output = ""
+    for (let i = 0; i < enemies.length; i++) {
+        output+="<div class='"+enemies[i].type+"' style='left:"+enemies[i].x+"px; top:"+enemies[i].y+"px'></div>"
+    }
+    document.getElementById("enemies").innerHTML = output;
+}
+function displaypBullet(){
+    output = ""
+    for (let i = 0; i < pBullets.length; i++) {
+        output+="<div class='pBullet' style='left:"+pBullets[i].x+"px; top:"+pBullets[i].y+"px'></div>"
+    }
+    document.getElementById("pBullets").innerHTML = output;
+}
+function displayExplosion(){
+    output = ""
+    for (let i = 0; i < explosions.length; i++){
+        if (explosions[i].duration>0) {
+            output+="<div class='explosion' style='left:"+explosions[i].x+"px; top:"+explosions[i].y+"px;'></div>"
+            explosions[i].duration-=1
+        }
+        else{
+            explosions.splice(i,1)
+            i--
+        }
+        
+    }
+    document.getElementById("explosions").innerHTML = output;
+}
+document.onkeydown = function (e) {
+    if (e.code == "ArrowLeft"){
+        controls.left = true
+    }
+    if (e.code == "ArrowRight"){
+        controls.right = true
+    }
+    if (e.code == "ArrowUp"){
+        controls.up = true
+    }
+    if (e.code == "ArrowDown"){
+        controls.down = true
+    }
+    if (e.code == "Space"){
+        controls.space = true
+    }
+}
+document.onkeyup = function (f) {
+    if (f.code == "ArrowLeft"){
+        controls.left = false
+    }
+    if (f.code == "ArrowRight"){
+        controls.right = false
+    }
+    if (f.code == "ArrowUp"){
+        controls.up = false
+    }
+    if (f.code == "ArrowDown"){
+        controls.down = false
+    }
+    if (f.code == "Space"){
+        controls.space = false
+    }
+}
+function movepBullets() {
+    for (let i = 0; i < pBullets.length; i++) {
+        pBullets[i].y -= 16
+        if(pBullets[i].y<-5){
+            pBullets.splice(i,1);
+        }
+    }
+}
+function checkCollision(obj1, obj2) {   
+    for (let i = 0; i < obj1.length; i++) {
+        for (let j = 0; j < obj2.length; j++) {
+            if (obj1[i].x<=obj2[j].x+obj2[j].width-1 && obj1[i].x+obj1[i].width-1>=obj2[j].x) {
+                if (obj1[i].y<=obj2[j].y+obj2[j].width-1 && obj1[i].y >= obj2[j].y) {
+                    obj1.splice(i,1)
+                    obj2[j].health-=1
+                    player.score+=30
+                    impactSFX.currentTime = 0;
+                    impactSFX.play();
+                    if (obj2[j].health<1) {
+                        explosions.push({x:obj2[j].x, y:obj2[j].y, duration: 60})
+                        obj2.splice(j,1)
+                        player.score+=250
+                        explosionSFX.currentTime = 0;
+                        explosionSFX.play();
+                        j--
+                    }
+                    i--
+                    break
+                }
+            }
+        }
+    }
+}
+function movePlayer() {
+    if (controls.up && !controls.down) {
+        if (controls.left && !controls.right) {
+            player.direction = 135;
+        }
+        else if (controls.right && !controls.left){
+            player.direction = 45;
+        }
+        else{
+            player.direction = 90;
+        }
+        player.speed=3
+    }
+    else if(controls.down && !controls.up){
+        if (controls.left && !controls.right) {
+            player.direction = 225;
+        }
+        else if (controls.right && !controls.left){
+            player.direction = 315;
+        }
+        else{
+            player.direction = 270;
+        }
+        player.speed=3
+    }
+    else if(controls.left && !controls.right){
+        player.direction = 180
+        player.speed=3
+    }
+    else if(controls.right && !controls.left){
+        player.direction = 0
+        player.speed=3
+    }
+    else{
+        player.speed = 0
+    }
+    xMov = Math.cos(player.direction * (Math.PI/180))*player.speed
+    yMov = Math.sin(player.direction * (Math.PI/180))*player.speed
+    if (player.x + xMov > 0 && player.x+23 + xMov <480) {
+        player.x += xMov
+    }
+    else if(player.direction>=90 && player.direction<=270){
+        player.x = 0
+    }
+    else if(player.direction<=90 && player.direction>=270){
+        player.x = 480 -23
+    }
+    if (player.y - yMov > 0 && player.y+15 - yMov <640) {
+        player.y -= yMov
+    }
+    else if(player.direction>=0 && player.direction<=180){
+        player.y = 0
+    }
+    else if(player.direction<=0 && player.direction>=180){
+        player.y = 640 -15
+    }
+
+    
+    if (player.reload>0) {
+        player.reload-=1
+    }
+    if (controls.space) {
+        if (!player.shoot){
+            player.bullets = 3
+            player.shoot = true
+        }
+    }
+    
+    else{
+        if (player.shoot) {
+                player.shoot = false
+        }
+    }
+    if (player.bullets > 0) {
+        if (player.reload<1) {
+            shootSFX.currentTime = 0;
+            shootSFX.play();
+            pBullets.push({x:player.x+6, y:player.y, width:2, height: 10},{x:player.x+16, y:player.y, width:2, height: 10})
+            player.bullets-=1
+            player.reload=5
+        }
+    }
+    if (player.invencibility<1) {
+        for (let i = 0; i < enemies.length; i++) {
+            if ((enemies[i].x<=player.x+player.width-1 && enemies[i].x>=player.x) || (enemies[i].x+15<=player.x+player.width-1 && enemies[i].x+15>=player.x)) {
+                if ((player.y<=enemies[i].y+enemies[i].width-1 && player.y >= enemies[i].y) || (player.y+15<=enemies[i].y+enemies[i].width-1 && player.y+15 >= enemies[i].y)) {
+                    player.score-=500
+                    player.invencibility=180
+                }
+            }
+        }
+    }
+    else{
+        player.invencibility-=1
+    }
+    
+    
+}
+
+
+function drawWorld(){
+    displayExplosion();
+    displayEnemies();
+    displaypBullet();
+    displayPlayer();
+}
+function executeWorld() {
+    createEnemies();
+    createEnemies();
+    moveEnemies();
+    movePlayer();
+    movepBullets();
+    checkCollision(pBullets,enemies);
+    drawWorld();
+}
+var gameOn = setInterval("executeWorld()", 1000/60)
+</script>
+</html>
