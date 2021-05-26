@@ -1,4 +1,4 @@
-package Algoritmos;
+package bootcamp.java.Algoritmos;
 public class Divisible {
     public static void main(String[] args) {
         int[] arreglo = new int[]{1,3,5,8,9,10,12,15,20};

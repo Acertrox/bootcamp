@@ -1,3 +1,5 @@
+package bootcamp.java.Algoritmos;
+
 public class Mult{
     public static void main(String[] args){
         int result = Multiplicar(3,5,7);

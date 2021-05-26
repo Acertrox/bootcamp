@@ -1,0 +1,10 @@
+INSERT INTO usuarios(rut) VALUES (123456789-0);
+
+SELECT * FROM usuarios;
+
+UPDATE usuarios
+SET rut = 987654321-0
+WHERE id = 1;
+
+DELETE FROM usuarios
+WHERE id = 1;
