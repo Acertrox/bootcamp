@@ -1,4 +1,5 @@
-package bootcamp.java.algoritmos;
+package algoritmos.algoritmosI;
+
 
 public class PrintOdds {
     public static void main(String[] args){

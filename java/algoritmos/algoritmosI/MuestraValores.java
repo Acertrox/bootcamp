@@ -1,4 +1,5 @@
-package bootcamp.java.algoritmos;
+package algoritmos.algoritmosI;
+
 public class MuestraValores {
     public static void main(String[] args) {
         String[] nombres = new String[]{"Español", "Inglés", "Francés", "Alemán", "Japones", "Chino", "Hindi"};

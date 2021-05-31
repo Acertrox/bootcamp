@@ -1,5 +1,4 @@
-package bootcamp.java.algoritmos.algoritmos2;
-
+package algoritmos.algoritmosII;
 
 
 public class Funciones {

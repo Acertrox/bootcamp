@@ -1,6 +1,4 @@
-package bootcamp.java.algoritmos.algoritmos2;
-
-
+package algoritmos.algoritmosII;
 
 import java.util.Arrays;
 
