@@ -1,4 +1,4 @@
-package bootcamp.java.Algoritmos;
+package bootcamp.java.algoritmos;
 
 public class Mult{
     public static void main(String[] args){
