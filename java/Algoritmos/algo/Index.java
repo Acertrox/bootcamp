@@ -1,4 +1,4 @@
-package bootcamp.java.Algoritmos.algo;
+package bootcamp.java.algoritmos.algo;
 
 public class Index {
     public static void main(String[] args) {

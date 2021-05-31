@@ -1,4 +1,4 @@
-package bootcamp.java.Algoritmos.algoritmos2;
+package bootcamp.java.algoritmos.algoritmos2;
 
 
 

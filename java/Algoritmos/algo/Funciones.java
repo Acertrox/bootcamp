@@ -1,4 +1,4 @@
-package bootcamp.java.Algoritmos.algo;
+package bootcamp.java.algoritmos.algo;
 
 public class Funciones {
     // 1. 
