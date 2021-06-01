@@ -1,4 +1,4 @@
-package algoritmos.algoritmosI;
+package algoritmos.algoritmosIII;
 
 
 public class Funciones {

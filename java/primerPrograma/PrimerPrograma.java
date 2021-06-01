@@ -1,4 +1,4 @@
-package bootcamp.java.primerPrograma;
+package primerPrograma;
 
 
 public class PrimerPrograma {
