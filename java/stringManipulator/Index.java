@@ -1,4 +1,4 @@
-package stringManipulator;
+package stringmanipulator;
 
 public class Index {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package classProject;
+package classproject;
 
 public class Index {
     public static void main(String[] args) {

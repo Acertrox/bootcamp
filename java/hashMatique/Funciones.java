@@ -1,4 +1,4 @@
-package hashMatique;
+package hashmatique;
 
 import java.util.HashMap;
 import java.util.Set;

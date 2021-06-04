@@ -1,4 +1,4 @@
-package stringManipulator;
+package stringmanipulator;
 
 public class StringManipulator {
     public String trimAndConcat(String str1, String str2){

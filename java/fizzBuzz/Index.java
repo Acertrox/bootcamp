@@ -1,4 +1,4 @@
-package fizzBuzz;
+package fizzbuzz;
 
 public class Index {
     public static void main(String[] args) {
