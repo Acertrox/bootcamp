@@ -1,4 +1,4 @@
-
+package algoritmos.algortimosVI;
 
 public class Funciones {
     public void sumaPorcentaje(double valor, int porcentaje){
